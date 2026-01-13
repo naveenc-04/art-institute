@@ -57,7 +57,7 @@ import { useRef } from 'react';
 
   return (
   <div>
-    {/* 👇 Custom Select Button */}
+    {/* Custom Select Button */}
     <div style={{ marginBottom: '1rem' }}>
       <Button
         label="Custom Select"
@@ -65,7 +65,7 @@ import { useRef } from 'react';
         onClick={(e) => overlayRef.current?.toggle(e)}
       />
     </div>
-        {/* 👇 Overlay Panel UI */}
+        {/* Overlay Panel UI */}
     <OverlayPanel ref={overlayRef}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
         <InputNumber
@@ -79,7 +79,12 @@ import { useRef } from 'react';
         <Button
           label="Apply"
           onClick={() => {
-            if (!selectCount || selectCount <= 0) return;
+             if (!selectCount || selectCount <= 0) return;
+
+              if (selectCount > artworks.length) {
+               alert(`Only ${artworks.length} rows available on this page`);
+              return;
+            }
 
             const idsToSelect = artworks
               .slice(0, selectCount)
