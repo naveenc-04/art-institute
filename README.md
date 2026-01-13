@@ -1,7 +1,8 @@
 # Art Institute of Chicago – Artwork Table
 
-This project is a React + TypeScript application built using Vite.  
-It displays artwork data from the Art Institute of Chicago API using PrimeReact DataTable with server-side pagination and persistent row selection.
+This project is a React application built using Vite and TypeScript.
+It displays artwork data from the Art Institute of Chicago API using
+PrimeReact DataTable with server-side pagination and persistent row selection.
 
 ## Tech Stack
 - React
@@ -11,23 +12,19 @@ It displays artwork data from the Art Institute of Chicago API using PrimeReact 
 
 ## Features
 - Server-side pagination using the Art Institute of Chicago API
-- PrimeReact DataTable with checkbox row selection
-- Persistent row selection across pages (ID-based strategy)
-- Custom row selection overlay without prefetching data
-- Strict TypeScript configuration
+- DataTable implementation using PrimeReact
+- Checkbox-based row selection
+- Persistent row selection across page navigation using artwork IDs
+- Custom row selection overlay without prefetching API data
 
-## Important Implementation Notes
-- Only the current page data is stored in memory
-- Row selection is tracked using artwork IDs
+## Implementation Details
+- Only the current page data is fetched and stored
+- Page changes always trigger a fresh API request
+- Selected rows are tracked using artwork IDs (no row objects stored)
 - No prefetching or caching of other pages is performed
-- Custom selection is limited to the current page as required
-
-## Getting Started
-```bash
-npm install
-npm run dev
 
 ## Live Demo
-The application is deployed on Netlify and can be accessed using the link below:
+https://willowy-conkies-dda0fb.netlify.app/
 
-🔗 https://YOUR_NETLIFY_URL_HERE 
+## Repository
+https://github.com/naveenc-04/art-institute
